@@ -1,11 +1,15 @@
 //! moment.js locale configuration
+//! locale : Hebrew (he)
+//! author : Tomer Cohen : https://github.com/tomer
+//! author : Moshe Simantov : https://github.com/DevelopmentIL
+//! author : Tal Ater : https://github.com/TalAter
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'
        && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+   typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
-}(this, (function (moment) { 'use strict';
+}(this, function (moment) { 'use strict';
 
 
     var he = moment.defineLocale('he', {
@@ -38,7 +42,6 @@
             future : 'בעוד %s',
             past : 'לפני %s',
             s : 'מספר שניות',
-            ss : '%d שניות',
             m : 'דקה',
             mm : '%d דקות',
             h : 'שעה',
@@ -93,4 +96,4 @@
 
     return he;
 
-})));
+}));

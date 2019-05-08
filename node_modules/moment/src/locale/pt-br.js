@@ -1,5 +1,5 @@
 //! moment.js locale configuration
-//! locale : Portuguese (Brazil) [pt-br]
+//! locale : brazilian portuguese (pt-br)
 //! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
 import moment from '../moment';
@@ -9,8 +9,7 @@ export default moment.defineLocale('pt-br', {
     monthsShort : 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_'),
     weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
     weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
-    weekdaysMin : 'Do_2ª_3ª_4ª_5ª_6ª_Sá'.split('_'),
-    weekdaysParseExact : true,
+    weekdaysMin : 'Dom_2ª_3ª_4ª_5ª_6ª_Sáb'.split('_'),
     longDateFormat : {
         LT : 'HH:mm',
         LTS : 'HH:mm:ss',
@@ -33,9 +32,8 @@ export default moment.defineLocale('pt-br', {
     },
     relativeTime : {
         future : 'em %s',
-        past : 'há %s',
+        past : '%s atrás',
         s : 'poucos segundos',
-        ss : '%d segundos',
         m : 'um minuto',
         mm : '%d minutos',
         h : 'uma hora',
@@ -47,7 +45,7 @@ export default moment.defineLocale('pt-br', {
         y : 'um ano',
         yy : '%d anos'
     },
-    dayOfMonthOrdinalParse: /\d{1,2}º/,
+    ordinalParse: /\d{1,2}º/,
     ordinal : '%dº'
 });
 

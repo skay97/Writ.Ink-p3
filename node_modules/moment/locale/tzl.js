@@ -1,11 +1,14 @@
 //! moment.js locale configuration
+//! locale : talossan (tzl)
+//! author : Robin van der Vliet : https://github.com/robin0van0der0v with the help of Iustì Canun
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'
        && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+   typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
-}(this, (function (moment) { 'use strict';
+}(this, function (moment) { 'use strict';
+
 
 
     // After the year there should be a slash and the amount of years since December 26, 1979 in Roman numerals.
@@ -47,7 +50,6 @@
             future : 'osprei %s',
             past : 'ja%s',
             s : processRelativeTime,
-            ss : processRelativeTime,
             m : processRelativeTime,
             mm : processRelativeTime,
             h : processRelativeTime,
@@ -59,7 +61,7 @@
             y : processRelativeTime,
             yy : processRelativeTime
         },
-        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinalParse: /\d{1,2}\./,
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
@@ -70,7 +72,6 @@
     function processRelativeTime(number, withoutSuffix, key, isFuture) {
         var format = {
             's': ['viensas secunds', '\'iensas secunds'],
-            'ss': [number + ' secunds', '' + number + ' secunds'],
             'm': ['\'n míut', '\'iens míut'],
             'mm': [number + ' míuts', '' + number + ' míuts'],
             'h': ['\'n þora', '\'iensa þora'],
@@ -87,4 +88,4 @@
 
     return tzl;
 
-})));
+}));

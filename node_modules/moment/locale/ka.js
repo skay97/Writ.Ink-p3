@@ -1,11 +1,13 @@
 //! moment.js locale configuration
+//! locale : Georgian (ka)
+//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'
        && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+   typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
-}(this, (function (moment) { 'use strict';
+}(this, function (moment) { 'use strict';
 
 
     var ka = moment.defineLocale('ka', {
@@ -52,7 +54,6 @@
                 }
             },
             s : 'რამდენიმე წამი',
-            ss : '%d წამი',
             m : 'წუთი',
             mm : '%d წუთი',
             h : 'საათი',
@@ -64,7 +65,7 @@
             y : 'წელი',
             yy : '%d წელი'
         },
-        dayOfMonthOrdinalParse: /0|1-ლი|მე-\d{1,2}|\d{1,2}-ე/,
+        ordinalParse: /0|1-ლი|მე-\d{1,2}|\d{1,2}-ე/,
         ordinal : function (number) {
             if (number === 0) {
                 return number;
@@ -85,4 +86,4 @@
 
     return ka;
 
-})));
+}));

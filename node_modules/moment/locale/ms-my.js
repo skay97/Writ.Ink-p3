@@ -1,14 +1,16 @@
 //! moment.js locale configuration
+//! locale : Bahasa Malaysia (ms-MY)
+//! author : Weldan Jamili : https://github.com/weldan
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'
        && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+   typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
-}(this, (function (moment) { 'use strict';
+}(this, function (moment) { 'use strict';
 
 
-    var msMy = moment.defineLocale('ms-my', {
+    var ms_my = moment.defineLocale('ms-my', {
         months : 'Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember'.split('_'),
         monthsShort : 'Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ogs_Sep_Okt_Nov_Dis'.split('_'),
         weekdays : 'Ahad_Isnin_Selasa_Rabu_Khamis_Jumaat_Sabtu'.split('_'),
@@ -58,7 +60,6 @@
             future : 'dalam %s',
             past : '%s yang lepas',
             s : 'beberapa saat',
-            ss : '%d saat',
             m : 'seminit',
             mm : '%d minit',
             h : 'sejam',
@@ -72,10 +73,10 @@
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 7th is the first week of the year.
+            doy : 7  // The week that contains Jan 1st is the first week of the year.
         }
     });
 
-    return msMy;
+    return ms_my;
 
-})));
+}));
