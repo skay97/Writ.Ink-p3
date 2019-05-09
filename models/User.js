@@ -206,13 +206,13 @@ User.schema.methods.resetPassword = function(callback) {
 		new Email('forgotten-password', { transport: 'mandrill', engine: 'jade', root: 'templates/emails' }).send({
 			user: user,
 			link: '/reset-password/' + user.resetPasswordKey,
-			host: 'http://www.sydjs.com',
+			host: 'https://writ-ink.herokuapp.com/',
 		}, {
-			subject: 'Reset your SydJS Password',
+			subject: 'Reset your Password',
 			to: user.email,
 			from: {
-				name: 'SydJS',
-				email: 'contact@sydjs.com'
+				name: '',
+				email: ''
 			}
 		}, callback);
 	});

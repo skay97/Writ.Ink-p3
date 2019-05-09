@@ -5,7 +5,7 @@ header(id='header', role='banner', class=(section == 'home' ? 'header--home' : '
 		.navbar-header
 			a(href='/', title='Back to Home').site-branding
 				//- include /public/images/logo.svg
-				img(src='/images/sydjs_600.png', alt='SydJS logo', id='squared')
+				img(src='', alt='logo', id='squared')
 			//- User avatar
 			if user
 				a(href='/me').user.hidden-md.hidden-lg
@@ -19,7 +19,7 @@ header(id='header', role='banner', class=(section == 'home' ? 'header--home' : '
 				ul.navbar-nav.navbar-nav--left
 					each link in navLinks
 						li(class=(section == link.key ? 'nav-item-' + link.key + ' active' : 'nav-item-' + link.key)): a(href=link.href)= link.label
-					li: a(href='mailto:craig.sharkie+sydjs@gmail.com') Contact
+					li: a(href='') Contact
 				ul.navbar-nav.navbar-nav--right
 					if user
 						li: a(href='/me').user
