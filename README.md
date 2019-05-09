@@ -1,15 +1,7 @@
 
-## Getting Started
-
-To run the site locally, there are a few things to set up.
-
-Because we have some private keys for our MongoDB, Cloudinary and Mandrill accounts, you'll need to set up your own equivalents before the site will run properly.
-
-_If you're looking to work on the SydJS site and want access to our accounts, please get in touch_
-
 ### Install Node.js and MongoDB
 
-You'll need node 4.8.x and npm 2.15.x installed to run SydJS. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
+You'll need node 4.8.x and npm 2.15.x installed to run. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
 
 You'll also need MongoDB 2.4.x - if you're on a Mac, the easiest way is to install [homebrew](http://brew.sh) and then run `brew install mongo`.
 
