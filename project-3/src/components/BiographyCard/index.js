@@ -15,20 +15,14 @@ const styles = theme => ({
         minWidth: 275,
       },
     media: {
-        height: 140,
+        height: 200,
       },
     centerText: {
         textAlign: "center",
       },
-    flexDisplay: {
-        diplay: "flex",
-      },
-    centerJustify: {
-        justifyContent: "center",
-      },
     spacing: {
       padding: theme.spacing.unit * 2,
-    },
+    }
   });
 
 function MediaCard(props) {
@@ -61,7 +55,7 @@ function MediaCard(props) {
           </Typography>
           </CardContent>
           <CardContent>
-          <Grid container spacing={16} className={classes.justifyContent}>
+          <Grid container spacing={8} style={{justifyContent: "center"}}>
           <Grid item>
           <Button variant="contained" color="primary">
           Subscribe
