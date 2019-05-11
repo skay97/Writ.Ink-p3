@@ -19,7 +19,7 @@ const styles = theme => ({
     marginTop: "2rem",
   },
   paper: {
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing.unit * 5,
     justifyContent: 'center',
     color: 'white',
   },
