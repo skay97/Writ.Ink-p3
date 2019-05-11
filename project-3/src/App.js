@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBook, faStickyNote, faScroll } from '@fortawesome/free-solid-svg-icons';
 import AuthorBanner from './components/AuthorBanner';
 import BiographyCard from './components/BiographyCard';
+import CategoryTags from './components/CategoryTags'
 import Grid from '@material-ui/core/Grid';
 import Works from './components/Works';
 
@@ -16,9 +17,10 @@ function App() {
           <AuthorBanner/>
       <Grid container spacing={40}>
         <Grid item xs={3}>
-        <BiographyCard/>          
+        <BiographyCard/>     
         </Grid>
         <Grid item xs={7}>
+        <CategoryTags/>
           <Works/>
         </Grid>
       </Grid>
