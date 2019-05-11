@@ -11,22 +11,14 @@ import Avatar from '@material-ui/core/Avatar';
 const styles = {
   card: {
     minWidth: 275,
-    textAlign: "left",
-    marginTop: 20,
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
-    color: "blue"
   },
   title: {
     fontSize: 14,
-  },
-  button: {
-    display: "flex",
-    color: "blue",
-    justifyContent: "flex-start",
   },
   pos: {
     marginBottom: 12,
@@ -38,43 +30,40 @@ const styles = {
   },
 };
 
-
-function SimpleCard(props) {
+function SimpleCard2(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
       <CardContent>
-          <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.bigAvatar} />
+      <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/761/334/432/female-user-girl-person-glasses-avatar-icon.svg" className={classes.bigAvatar} />
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           Word of the Day
         </Typography>
         <Typography variant="h5" component="h2">
-          be
+          He
           {bull}
-          nev
-          {bull}o{bull}
-          lent
+          llo
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          Exclamation or Noun
         </Typography>
         <Typography component="p">
-          well meaning and kindly.
+          A popular sallutation.
           <br />
-          {'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}
+          {"Lorem ipsum dolor amet vHS woke activated charcoal air plant. Polaroid excepteur tacos laborum, nulla leggings ut vape iceland. Actually reprehenderit sed williamsburg sustainable distillery humblebrag pabst iceland. Af la croix ramps before they sold out listicle celiac hashtag adipisicing next level tattooed photo booth jianbing. Mumblecore sed 90's, sriracha hoodie bicycle rights raw denim sartorial prism hammock. Hell of eiusmod aesthetic, est you probably haven't heard of them veniam intelligentsia. Seitan craft beer cronut esse taiyaki labore tumeric ea try-hard gentrify non dreamcatcher."}
         </Typography>
       </CardContent>
-      <CardActions className={classes.button} >
+      <CardActions>
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
   );
 }
 
-SimpleCard.propTypes = {
+SimpleCard2.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleCard);
+export default withStyles(styles)(SimpleCard2);
