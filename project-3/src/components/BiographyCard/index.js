@@ -11,6 +11,11 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
+    root: {
+        position: "relative",
+        left: "2rem",
+        top: "5.30rem",
+    },
     card: {
         minWidth: 275,
       },
@@ -22,13 +27,13 @@ const styles = theme => ({
       },
     spacing: {
       padding: theme.spacing.unit * 2,
-    }
+    },
   });
 
 function MediaCard(props) {
   const { classes } = props;
   return (
-    <Grid container spacing={24}>
+    <div className={classes.root}>
     <Grid item xs={2}>
     <Card className={classes.card}>
       <CardActionArea>
@@ -39,7 +44,7 @@ function MediaCard(props) {
         />
         <CardContent>
         <Typography gutterBottom variant="h5" component="p" className={classes.centerText}>
-            Adrian Morales
+            <strong>John Doe</strong>
           </Typography>
           <Typography gutterBottom variant="h6" component="p" className={classes.centerText}>
             Following
@@ -71,7 +76,7 @@ function MediaCard(props) {
       </CardActionArea>
     </Card>
     </Grid>
-    </Grid>
+    </div>
   );
 }
 
