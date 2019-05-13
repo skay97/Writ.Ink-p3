@@ -37,6 +37,7 @@ class CenteredTabs extends React.Component {
           <Tab label="Books" />
           <Tab label="Poems" />
           <Tab label="Short Stories" />
+          <Tab label="All" />
         </Tabs>
       </Paper>
     );

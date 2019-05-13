@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withStyles } from '@material-ui/core/styles';
-//import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
@@ -48,7 +47,7 @@ function InsetDividers(props) {
           />
       <ListItemSecondaryAction>
         <IconButton>
-          <FontAwesomeIcon icon="bookmark"/>
+          <FontAwesomeIcon icon="edit"/>
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
@@ -78,7 +77,7 @@ function InsetDividers(props) {
           />
       <ListItemSecondaryAction>
         <IconButton>
-          <FontAwesomeIcon icon="bookmark"/>
+          <FontAwesomeIcon icon="edit"/>
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
@@ -108,7 +107,7 @@ function InsetDividers(props) {
           />
       <ListItemSecondaryAction>
         <IconButton>
-          <FontAwesomeIcon icon="bookmark"/>
+          <FontAwesomeIcon icon="edit"/>
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
