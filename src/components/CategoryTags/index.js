@@ -8,9 +8,7 @@ import Tab from '@material-ui/core/Tab';
 const styles = {
   root: {
     flexGrow: 1,
-    position: 'relative',
-    top: '19rem',
-    marginLeft: '2rem',
+    marginTop: '2rem',
     marginBottom: '2rem'
   },
 };

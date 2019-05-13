@@ -8,20 +8,11 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    position: "absolute",
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-    height: "15rem",
-    flexGrow: 1,
+    paddingTop: theme.spacing.unit * 10,
+    paddingBottom: theme.spacing.unit * 10,
     backgroundColor: "black",
-    marginBottom: "2rem",
-    marginTop: "2rem",
-  },
-  paper: {
-    padding: theme.spacing.unit * 5,
-    justifyContent: 'center',
-    color: 'white',
+    marginTop: "1rem",
   },
   extendedIcon: {
     marginBottom: theme.spacing.unit,
@@ -33,9 +24,9 @@ function PaperSheet(props) {
 
   return (
       <Paper className={classes.root} elevation={1}>
-        <Grid container className={classes.paper}>
+        <Grid container direction="row" justify="center" alignItems="flex-end">
         <Grid item xs={5}>
-        <Typography component="p" style={{color: "white", paddingTop:"2rem"}}>
+        <Typography component="p" style={{color: "white"}}>
           <strong>About Me:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies id massa vitae volutpat. Praesent tempus lorem purus, at iaculis nunc sollicitudin ac. Donec finibus sed urna a malesuada.
         </Typography>
         </Grid>

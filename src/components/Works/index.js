@@ -17,7 +17,6 @@ const styles = theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.background.paper,
-    top: '19rem',
     marginLeft: '2rem',
   },
   align: {
