@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import homePage from './pages/homePage';
-import ProfileOwn from './pages/ProfileOwn'
-import ProfileOther from './pages/ProfileOther';
+import ProfileOwn from './pages/profileOwn'
+import ProfileOther from './pages/profileOther';
 import LoginPage from './pages/loginPage';
 
 function App(params) {
