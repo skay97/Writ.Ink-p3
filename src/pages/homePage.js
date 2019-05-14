@@ -1,12 +1,10 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 import PrimarySearchAppBar from "../components/AppBar/Appbar"
 import Card from "../components/Card/Card";
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-// import Avatar from '@material-ui/core/Avatar';
 import Card2 from "../components/Card/Card2"
+import Footer from "../components/Footer/Footer"
 
 const style = {
   Card: {
@@ -16,7 +14,6 @@ const style = {
 }
 const styles = theme => ({
   footer: {
-    backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing.unit * 8,
     padding: `${theme.spacing.unit * 6}px 0`,
     backgroundColor: "#3f51b5",
@@ -28,7 +25,6 @@ const styles = theme => ({
 });
 
 function App(props) {
-  const { classes } = props;
   return (
     <>
 
@@ -52,14 +48,15 @@ function App(props) {
 
       </Grid>
 
-      <footer className={classes.footer}>
+      {/* <footer className={classes.footer}>
         <Typography className={classes.typo} variant="h6" align="center" gutterBottom>
           Footer
         </Typography>
         <Typography className={classes.typo} variant="subtitle1" align="center" color="textSecondary" component="p">
           Something here to give the footer a purpose!
         </Typography>
-      </footer>
+      </footer> */}
+      <Footer/>
 
     </>
   );
