@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import homePage from './pages/homePage';
 import profileOwn from "./pages/profileOwn"
-import profileOther from './pages/profileOther';
+import profileOther from "./pages/profileOther"
 import LoginPage from './pages/loginPage';
 
 function App(params) {
