@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import homePage from './pages/homePage';
-import ProfileOwn from './pages/profileOwn'
-import ProfileOther from './pages/profileOther';
+import profileOwn from "./pages/profileOwn"
+import profileOther from './pages/profileOther';
 import LoginPage from './pages/loginPage';
 
 function App(params) {
@@ -12,8 +12,8 @@ function App(params) {
       <Switch>
         <Route exact path='/' component={LoginPage} />
         <Route exact path='/home' component={homePage} />
-        <Route exact path='/admin' component={ProfileOwn} />
-        <Route exact path='/view' component={ProfileOther} />
+        <Route exact path='/admin' component={profileOwn} />
+        <Route exact path='/view' component={profileOther} />
       </Switch>
     </div>
     </Router>
