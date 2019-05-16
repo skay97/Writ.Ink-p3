@@ -29,6 +29,7 @@ exports.fetchPosts = function(req, res, next) {
           message: 'Error! Could not retrieve posts.'
         });
       }
+      console.log(posts);
       res.json(posts);
     });
 };

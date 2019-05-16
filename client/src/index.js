@@ -47,6 +47,10 @@ ReactDOM.render(
             <Route exact path='/posts' component={PostList} />
             <Route path='/posts/new' component={RequireAuth(PostNew)} />
             <Route path='/posts/:id' component={PostDetail} />
+            {/* <Route path='/profile/:id' component={UserProfile} /> */}
+            {/* compontent did mount to auto sub the newly signed up user */}
+            {/* probably easier to make a new page for sign up */}
+            {/* <Route path='/subscribe/:id/' component={RequireAuth(SignUp)} />  */}
             <Route path='/my_posts' component={RequireAuth(PostMine)} />
             <Route component={NoMatch} />
           </Switch>

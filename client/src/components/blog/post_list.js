@@ -26,7 +26,18 @@ class PostList extends Component {
         </h3>
         {this.renderTags(post.categories)}
         <span className="span-with-margin text-grey"> • </span>
-        <span className="span-with-margin text-grey">{post.authorName}</span>
+        <Link to={`/profile/${post.authorId}`}>
+          <span className="span-with-margin text-grey"> {post.authorName}</span>
+        </Link>
+
+        {/* In profile page component*/}
+        {/* <Link to={`/subscribe/${post.authorId}`}>
+        <button>Subscribe</button>
+        </Link> */}
+        {/* Make an axios post request to do a mongo $push into the user model's arrray */}
+        {/* Need to make a post request on the backend to actually write it to the db */}
+        {/* In profile page component*/}
+
         <span className="span-with-margin text-grey"> • </span>
         <span className="span-with-margin text-grey">{new Date(post.time).toLocaleString()}</span>
         <hr />

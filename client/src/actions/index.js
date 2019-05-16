@@ -239,7 +239,7 @@ export function fetchPost(id) {
 
   return function(dispatch) {
     axios.get(`${ROOT_URL}/posts/${id}`).then(response => {
-      // console.log(response);
+      console.log(response.data);
       dispatch({
         type: FETCH_POST,
         payload: response.data,

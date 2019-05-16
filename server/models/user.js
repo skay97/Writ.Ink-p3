@@ -15,6 +15,8 @@ const userSchema = new Schema({
   address: { type: String, default: '' },
   occupation: { type: String, default: '' },
   description: { type: String, default: '' },
+
+  //Add an array for subbed authors
 });
 
 // On Save Hook, encrypt the password
