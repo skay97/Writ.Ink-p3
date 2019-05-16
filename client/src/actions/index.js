@@ -219,14 +219,14 @@ export function createPost({ title, categories, content }, historyPush, historyR
     }, {
       headers: {authorization: localStorage.getItem('token')},  // require auth
     })
-      .then((response) => {  // If create post succeed, navigate to the post detail page
+      .then((response) => {  // If create post succeeds, navigate to the post detail page
         dispatch({
           type: CREATE_POST,
           payload: response.data,
         });
         historyPush(`/posts/${response.data._id}`);
       })
-      .catch(({response}) => {  // If create post failed, alert failure message
+      .catch(({response}) => {  // If create post fails, alert failure message
         historyReplace('/posts/new', {
           time: new Date().toLocaleString(),
           message: response.data.message,
