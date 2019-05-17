@@ -4,6 +4,7 @@ import homePage from './pages/homePage';
 import profileOwn from "./pages/profileOwn"
 import profileOther from "./pages/profileOther"
 import LoginPage from './pages/loginPage';
+import postPage from './pages/postPage';
 
 function App(params) {
   return (
@@ -14,6 +15,7 @@ function App(params) {
         <Route exact path='/home' component={homePage} />
         <Route exact path='/admin' component={profileOwn} />
         <Route exact path='/view' component={profileOther} />
+        <Route exact path='/post' component={postPage} />
       </Switch>
     </div>
     </Router>
