@@ -13,6 +13,7 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 5,
     backgroundColor: "black",
     marginTop: "1rem",
+    marginBottom: "1rem",
   },
   extendedIcon: {
     marginBottom: theme.spacing.unit,
