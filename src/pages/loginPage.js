@@ -15,6 +15,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
+import logo from "../writ_logo_wide.png";
 
 const styles = theme => ({
   main: {
@@ -57,12 +58,13 @@ function SignIn(props) {
     <main className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
-        <Typography component="h2" variant="h4">
+        {/* <Typography component="h2" variant="h4">
             Writ.Ink
-        </Typography>
-        <Avatar className={classes.avatar}>
+        </Typography> */}
+        <img src={logo} style={{height: "50px", width: "210px"}}/>
+        {/* <Avatar className={classes.avatar}>
             <FontAwesomeIcon icon="pen-nib"/>
-        </Avatar>
+        </Avatar> */}
         <form className={classes.form}>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">Email Address</InputLabel>
