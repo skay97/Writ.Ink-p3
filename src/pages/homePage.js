@@ -4,29 +4,19 @@ import Card from "../components/Card/Card";
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Card2 from "../components/Card/Card2"
-import Footer from "../components/Footer/Footer"
+import Card3 from "../components/Card/Card3"
+import Footer from "../components/Footer/Footer";
 
 const style = {
-  Card: {
-    padding: 200,
-    marginTop: 100
+  Container: {
+    backgroundColor: "#DCDCDC"
   }
 }
-const styles = theme => ({
-  footer: {
-    marginTop: theme.spacing.unit * 8,
-    padding: `${theme.spacing.unit * 6}px 0`,
-    backgroundColor: "#3f51b5",
-    color: "#fff"
-  },
-  typo: {
-    color: "white"
-  }
-});
 
 function App(props) {
+  const { classes } = props;
   return (
-    <>
+    <div className={classes.Container} >
 
       <PrimarySearchAppBar />
 
@@ -34,32 +24,42 @@ function App(props) {
         spacing={24}
         justify="center"
       >
-        <Grid item xs={6} >
-          <Card style={style.Card} />
+        <Grid item xs={12} sm={10} >
+          <Card />
         </Grid>
       </Grid>
+
       <Grid container
         spacing={24}
         justify="center"
       >
-        <Grid item xs={6} >
-          <Card2 style={style.Card} />
+        <Grid item xs={12} sm={4}>
+          <Card2 />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Card3 />
         </Grid>
 
       </Grid>
 
-      {/* <footer className={classes.footer}>
-        <Typography className={classes.typo} variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography className={classes.typo} variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-      </footer> */}
-      <Footer/>
+      <Grid container
+        spacing={24}
+        justify="center"
+      >
+        <Grid item xs={12} sm={5}>
+          <Card3 />
+        </Grid>
+        <Grid item xs={12} sm={5}>
+          <Card2 />
+        </Grid>
+      </Grid>
 
-    </>
+
+      <Footer />
+
+    </div>
+
   );
 }
 
-export default withStyles(styles)(App);
+export default withStyles(style)(App);
