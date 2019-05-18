@@ -18,10 +18,13 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
+    "precommit": "sort-package-json && lint-staged",
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "analyze": "source-map-explorer build/static/js/main.*"
+},
   "proxy": "http://localhost:3090/"
 }
