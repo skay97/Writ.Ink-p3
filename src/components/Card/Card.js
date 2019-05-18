@@ -13,6 +13,9 @@ const styles = {
     minWidth: 275,
     textAlign: "left",
     marginTop: 20,
+    backgroundColor: "#A9A9A9",
+    color: "white"
+
   },
   bullet: {
     display: 'inline-block',
@@ -21,7 +24,7 @@ const styles = {
     color: "blue"
   },
   title: {
-    fontSize: 14,
+    fontSize: "10vh",
   },
   button: {
     display: "flex",
@@ -30,6 +33,12 @@ const styles = {
   },
   pos: {
     marginBottom: 12,
+    color: "white"
+
+  },
+  desc: {
+    fontSize: "1.05rem",
+    color: "#fff"
   },
   bigAvatar: {
     margin: 10,
@@ -47,23 +56,22 @@ function SimpleCard(props) {
     <Card className={classes.card}>
       <CardContent>
           <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.bigAvatar} />
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
+        <Typography style = {{color:"white"}} className={classes.title} color="textSecondary" gutterBottom>
+          Featured Article
         </Typography>
-        <Typography variant="h5" component="h2">
+        <Typography style = {{color: "white"}}  variant="h5" component="h2">
           be
           {bull}
           nev
           {bull}o{bull}
           lent
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
+        <Typography  className={classes.pos} color="textSecondary">
           adjective
         </Typography>
-        <Typography component="p">
-          well meaning and kindly.
+        <Typography className = {classes.desc}  component="p">
           <br />
-          {'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}
+          {'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
         </Typography>
       </CardContent>
       <CardActions className={classes.button} >

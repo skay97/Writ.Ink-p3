@@ -32,6 +32,12 @@ const styles = theme => ({
       display: 'block',
     },
   },
+  circle: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+    backgroundColor: "red"
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -113,6 +119,7 @@ class PrimarySearchAppBar extends React.Component {
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+    const circ = <span className={classes.cirlce}>•</span>;
 
     const renderMenu = (
       <Menu
@@ -161,13 +168,13 @@ class PrimarySearchAppBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar style={{ backgroundColor: "#424242" }} position="static">
           <Toolbar>
             {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <MenuIcon />
             </IconButton> */}
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              Writ.Ink
+              Writ{circ}ink
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -184,7 +191,7 @@ class PrimarySearchAppBar extends React.Component {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
-               
+
               </IconButton>
               <IconButton color="inherit">
                 <Badge badgeContent={12} color="secondary">
