@@ -24,6 +24,10 @@ body {
   margin-top: 90px;
 }
 
+.a:hover, button {
+  color:white,
+}
+
 .form-signin {
   max-width: 300px;
   padding: 19px 29px 29px;

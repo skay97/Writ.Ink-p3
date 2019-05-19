@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import { Link } from 'react-router-dom';
 import { verifyJwt, signoutUser } from '../actions';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-//import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
@@ -129,44 +127,8 @@ class Header extends React.Component {
     this.setState({ mobileMoreAnchorEl: null });
   };
 
-
-  renderLinks() {
-    if (this.props.authenticated) {
-      const { classes } = this.props;
-      // show a dropdown menu for authenticated user
-      return (
-        <React.Fragment>
-        <Toolbar>
-        <div className={classes.sectionDesktop}>
-          <Button key={2} color="inherit" href="/" onClick={this.props.signoutUser}>Sign Out</Button>
-        </div>
-        </Toolbar>
-        </React.Fragment>
-        /* 
-        <div>
-          <a href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.props.username}</a>
-            <Link to="/settings">Settings</Link>
-            <Link to="/" onClick={this.props.signoutUser}>Sign out</Link>
-        </div>*/
-      );
-    } else {
-      // show a link to sign in or sign up
-      const { classes } = this.props;
-      return (
-        <React.Fragment>
-        <Toolbar>
-        <div className={classes.sectionDesktop}>
-          <Button key={1} color="inherit" href="/signup">Register</Button>
-        </div>
-        <div className={classes.sectionDesktop}>
-          <Button key={2} color="inherit" href="/signin">Sign In</Button>
-        </div>
-        </Toolbar>
-        </React.Fragment>
-      );
-    }
-  }
   render() {
+    if (this.props.authenticated) {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
@@ -182,6 +144,7 @@ class Header extends React.Component {
       >
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={this.handleMenuClose}><a href="/settings" style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>My Account</a></MenuItem>
+        <MenuItem onClick={this.handleMenuClose}><a href="/" onClick={this.props.signoutUser} style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>Sign Out</a></MenuItem>
       </Menu>
     );
 
@@ -202,11 +165,18 @@ class Header extends React.Component {
           <p>Notifications</p>
         </MenuItem>
         <MenuItem onClick={this.handleProfileMenuOpen}>
-          <IconButton color="inherit">
+          <IconButton 
+            aria-owns={isMenuOpen ? 'material-appbar' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleProfileMenuOpen}
+            color="inherit"
+          >
             <AccountCircle />
           </IconButton>
           <p>Profile</p>
         </MenuItem>
+        <MenuItem onClick={this.handleMenuClose}><a href="/settings" style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>My Account</a></MenuItem>
+        <MenuItem onClick={this.handleMenuClose}><a href="/" onClick={this.props.signoutUser} style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>Sign Out</a></MenuItem>
       </Menu>
     );
 
@@ -233,9 +203,6 @@ class Header extends React.Component {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-            <Button color="inherit" href="https://github.com/skay97/project-3">Github</Button>
-            <Button color="inherit" href="/posts">Posts</Button>
-              <div>{this.renderLinks()}</div>
               <IconButton color="inherit">
                 <Badge badgeContent={12} color="secondary">
                   <NotificationsIcon />
@@ -261,7 +228,63 @@ class Header extends React.Component {
         {renderMobileMenu}
       </React.Fragment>
     );
+  } else {
+    const { mobileMoreAnchorEl } = this.state;
+    const { classes } = this.props;
+    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+    const renderMobileMenu = (
+      <Menu
+        anchorEl={mobileMoreAnchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isMobileMenuOpen}
+        onClose={this.handleMenuClose}
+      >
+        <MenuItem onClick={this.handleMenuClose} key={1}><Button href="/signup" style={{color:"white", textDecoration: "none"}}>Register</Button></MenuItem>
+        <MenuItem onClick={this.handleMenuClose} key={2}><Button href="/signin" style={{color:"white", textDecoration: "none"}}>Sign in</Button></MenuItem>
+
+      </Menu>
+    );
+
+    return (
+      <React.Fragment>
+        <AppBar style={{ backgroundColor: "#424242" }} position="static">
+          <Toolbar>
+            <Button color="inherit" href="/">
+            <Typography className={classes.title} variant="h6" noWrap>
+              Writ<span style={{color: 'red'}}>•</span>ink
+            </Typography>
+            </Button>
+              <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              />
+            </div>
+            <div className={classes.grow} />
+            <div className={classes.sectionDesktop}>
+            <Button color="inherit" href="/signup">Register</Button>
+            <Button color="inherit" href="/signin">Signin</Button>
+            </div>
+            <div className={classes.sectionMobile}>
+              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
+                <MoreIcon/>
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+      </React.Fragment>
+    );
   }
+  }  
 }
 
 Header.propTypes = {
