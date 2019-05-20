@@ -1,6 +1,6 @@
 // Main starting point of the application
-require('dotenv').config();
 const express = require('express');
+require('dotenv').config()
 const path = require('path');
 //const http = require('http');
 //const bodyParser = require('body-parser');

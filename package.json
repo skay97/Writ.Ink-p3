@@ -1,6 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.15.1"
+  },
   "description": "Writ.Ink: Content without the noise",
   "main": "server.js",
   "scripts": {

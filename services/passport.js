@@ -7,7 +7,6 @@
 // - Verify user with JWT (what we use here);
 // - Verify user with username and password;
 // - ... (check http://passportjs.org/)
-
 const passport = require('passport');
 const User = require('../models/user');
 const config = require('../config/config');
