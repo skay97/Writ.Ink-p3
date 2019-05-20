@@ -26,6 +26,11 @@ const styles = theme => ({
   grow: {
     flexGrow: 1,
   },
+  buttonClass: {
+    '&:hover': {
+      color: 'red',
+    },
+  },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
@@ -162,9 +167,10 @@ class Header extends React.Component {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <p>Notifications</p>
+            Notifications
         </MenuItem>
         <MenuItem onClick={this.handleProfileMenuOpen}>
+        <Typography variant="h6" noWrap>{this.props.id}</Typography>
           <IconButton 
             aria-owns={isMenuOpen ? 'material-appbar' : undefined}
             aria-haspopup="true"
@@ -173,7 +179,7 @@ class Header extends React.Component {
           >
             <AccountCircle />
           </IconButton>
-          <p>Profile</p>
+            Profile
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}><a href="/settings" style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>My Account</a></MenuItem>
         <MenuItem onClick={this.handleMenuClose}><a href="/" onClick={this.props.signoutUser} style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>Sign Out</a></MenuItem>
@@ -241,9 +247,8 @@ class Header extends React.Component {
         open={isMobileMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose} key={1}><Button href="/signup" style={{color:"white", textDecoration: "none"}}>Register</Button></MenuItem>
-        <MenuItem onClick={this.handleMenuClose} key={2}><Button href="/signin" style={{color:"white", textDecoration: "none"}}>Sign in</Button></MenuItem>
-
+        <MenuItem onClick={this.handleMenuClose}><a href="/signup" style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>Register</a></MenuItem>
+        <MenuItem onClick={this.handleMenuClose}><a href="/signin" style={{color:"rgba(0, 0, 0, 0.87)", textDecoration: "none"}}>Sign In</a></MenuItem>
       </Menu>
     );
 
@@ -270,8 +275,8 @@ class Header extends React.Component {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-            <Button color="inherit" href="/signup">Register</Button>
-            <Button color="inherit" href="/signin">Signin</Button>
+            <Button color="inherit" href="/signup" className={classes.buttonClass}>Register</Button>
+            <Button color="inherit" href="/signin" className={classes.buttonClass}>Signin</Button>
             </div>
             <div className={classes.sectionMobile}>
               <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
