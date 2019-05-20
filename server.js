@@ -1,8 +1,8 @@
 // Main starting point of the application
-require('dotenv').config()
 const express = require('express');
-//const http = require('http');
+require('dotenv').config()
 const path = require('path');
+//const http = require('http');
 //const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const router = require('./routes/router');
@@ -11,9 +11,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-const uristring =
-process.env.MONGOLAB_URI ||
-'mongodb://localhost/writ-ink';
+const uristring = process.env.MONGODB_URI ||'mongodb://localhost/writ-ink';
 
 mongoose.connect(uristring, {useNewUrlParser: true, useCreateIndex: true}, function (err, res) {
     if (err) {
@@ -35,7 +33,6 @@ app.use(morgan('combined'));  // middleware for logging
 // Router Setup
 router(app);
 
-// Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
     app.use(express.static('client/build'));
