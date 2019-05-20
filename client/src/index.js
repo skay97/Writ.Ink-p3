@@ -5,8 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 
-import Header from './components/header';
-import Footer from './components/footer';
+// import Header from './components/header';
+// import Footer from './components/footer';
 import NoMatch from './components/nomatch';
 import Welcome from './components/welcome';
 import Signin from './components/auth/signin';
@@ -18,6 +18,10 @@ import PostList from './components/blog/post_list';
 import PostNew from './components/blog/post_new';
 import PostDetail from './components/blog/post_detail/index';
 import PostMine from './components/blog/post_mine';
+
+import Header from "./components/AppBar/Appbar";
+import Footer from "./components/Footer/Footer";
+
 
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
@@ -36,8 +40,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+        {/* <Header /> */}
+        {/* <div className="container" id="content"> */}
         <Header />
-        <div className="container" id="content">
           <Switch>
             <Route exact path='/' component={Welcome} />
             <Route path='/signin' component={Signin} />
@@ -54,8 +59,9 @@ ReactDOM.render(
             <Route path='/my_posts' component={RequireAuth(PostMine)} />
             <Route component={NoMatch} />
           </Switch>
-        </div>
-        <Footer />
+          <Footer />
+        {/* </div> */}
+        {/* <Footer /> */}
       </div>
     </Router>
   </Provider>

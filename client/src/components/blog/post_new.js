@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { createPost } from '../../actions';
-import Quill from "../Quill";
+import QuillEditor from "../Quill";
 
 class PostNew extends Component {
   constructor(props) {
@@ -83,7 +83,7 @@ class PostNew extends Component {
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <Field name="title" component={this.renderInput} type="text" label="Title:" placeholder="Enter your title" required={true} />
           <Field name="categories" component={this.renderInput} type="text" label="Categories:" placeholder="Enter your categories, use ',' to separate them" required={true} />
-          <Quill ref={this.myRef} name="content" placeholder={'Write something...'} />
+          <QuillEditor ref={this.myRef} name="content" placeholder={'Write something...'} />
           <button action="submit" className="btn btn-primary">Publish</button>
         </form>
       </div>
