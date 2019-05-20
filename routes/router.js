@@ -1,10 +1,10 @@
-const Authentication = require('./controllers/authentication');
-const Profile = require('./controllers/userinfo');
-const Blog = require('./controllers/blog');
+const Authentication = require('../controllers/authentication');
+const Profile = require('../controllers/userinfo');
+const Blog = require('../controllers/blog');
 
 // service
 const passport = require('passport');
-const passportService = require('./services/passport');
+const passportService = require('../services/passport');
 
 // middleware in between Incoming Request and Route Handler
 const requireAuth = passport.authenticate('jwt', { session: false });
