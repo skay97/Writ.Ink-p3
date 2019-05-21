@@ -95,7 +95,7 @@ class PostList extends Component {
           <CardContent>
             <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.bigAvatar} />
             <Typography style={{}} className={classes.title} color="textSecondary" gutterBottom>
-              <Link className="link-without-underline" to={`/posts/${post._id}`}>{post.title}</Link> - {post.authorName}
+              <Link style={{color:"#fff", textDecoration:"none"}} className="link-without-underline" to={`/posts/${post._id}`}>{post.title}</Link> - {post.authorName}
             </Typography>
             {this.renderTags(post.categories)}
             <Typography className={classes.desc} component="p">
