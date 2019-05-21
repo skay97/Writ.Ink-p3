@@ -60,7 +60,7 @@ const styles = theme => ({
   }
 });
 
-class PostList extends Component {
+class PostListSub extends Component {
 
   componentDidMount() {
     this.props.fetchPosts();
@@ -133,12 +133,12 @@ function mapStateToProps(state) {
 
 // export default connect(mapStateToProps, { fetchPosts })(PostList);
 // export default withStyles(styles)(SimpleCard);
-PostList.propTypes = {
+PostListSub.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-// export default connect(mapStateToProps, { fetchPosts })(PostList)(withStyles(styles)(PostList));
+// export default connect(mapStateToProps, { fetchPosts })(PostListSub)(withStyles(styles)(PostListSub));
 export default compose(
-  withStyles(styles, { name: 'Postlist' }),
+  withStyles(styles, { name: 'PostListSub' }),
   connect(mapStateToProps, { fetchPosts })
-)(PostList);
+)(PostListSub);
