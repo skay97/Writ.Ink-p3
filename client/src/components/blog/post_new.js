@@ -8,15 +8,15 @@ class PostNew extends Component {
   constructor(props) {
     
     super(props);
-    this.myRef = React.createRef();
+    this.editorRef = React.createRef();
   }
 
   handleFormSubmit({ title, categories, content }) {
     console.log('submitting...', this)
     console.log(title);
     console.log(categories);
-    console.log(this.myRef.current.state.editorHtml);
-    content = this.myRef.current.state.editorHtml;
+    console.log(this.editorRef.current.state.editorHtml);
+    content = this.editorRef.current.state.editorHtml;
     this.props.createPost({ title, categories, content }, (path) => {  // callback 1: history push
       this.props.history.push(path);
     }, (path, state) => {  // callback 2: history replace
@@ -83,7 +83,7 @@ class PostNew extends Component {
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <Field name="title" component={this.renderInput} type="text" label="Title:" placeholder="Enter your title" required={true} />
           <Field name="categories" component={this.renderInput} type="text" label="Categories:" placeholder="Enter your categories, use ',' to separate them" required={true} />
-          <QuillEditor ref={this.myRef} name="content" placeholder={'Write something...'} />
+          <QuillEditor ref={this.editorRef} name="content" placeholder={'Write something...'} />
           <button action="submit" className="btn btn-primary">Publish</button>
         </form>
       </div>

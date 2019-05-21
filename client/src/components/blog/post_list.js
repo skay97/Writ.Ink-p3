@@ -32,7 +32,7 @@ const styles = theme => ({
     color: "blue"
   },
   title: {
-    fontSize: "6vh",
+    fontSize: "4vh",
     color: "#ffff",
     margin: 0
   },
@@ -90,12 +90,12 @@ class PostList extends Component {
         justify="center"
         alignItems="center"
         >
-        <Grid item xs={12} sm={10}>
-        <Card style={{ height: 400}} className={classes.card}>
+        <Grid item xs={12} sm={12}>
+        <Card style={{ height: 250}} className={classes.card}>
           <CardContent>
             <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.bigAvatar} />
-            <Typography style={{}} className={classes.title} color="textSecondary" gutterBottom>
-              <Link className="link-without-underline" to={`/posts/${post._id}`}>{post.title}</Link> - {post.authorName}
+            <Typography style={{color:"white"}} className={classes.title} color="textSecondary" gutterBottom>
+              <Link style={{color:"white"}} className="link-without-underline" to={`/posts/${post._id}`}>{post.title}</Link> - {post.authorName}
             </Typography>
             {this.renderTags(post.categories)}
             <Typography className={classes.desc} component="p">
@@ -104,9 +104,9 @@ class PostList extends Component {
               {/* {'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} */}
             </Typography>
           </CardContent>
-          <CardActions className={classes.button} >
-            <Button size="small">Learn More</Button>
-          </CardActions>
+          {/* <CardActions className={classes.button} >
+            <Button href={`/posts/${post._id}`} size="small">Read More</Button>
+          </CardActions> */}
         </Card>
         </Grid>
       </Grid>
