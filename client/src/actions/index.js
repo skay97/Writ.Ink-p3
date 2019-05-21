@@ -10,6 +10,7 @@ import {
   FETCH_PROFILES, //AM New
   PROFILE_ERROR, //AM New
   ACCOUNT_DELETED, //AM New
+  UPDATE_SUBSCRIPTION, //AM New
 
   FETCH_POSTS,
   CREATE_POST,
@@ -150,6 +151,21 @@ export function fetchProfiles() {
 }
 
 //AM New
+
+export function updateSubscription(userId) {
+
+  return function(dispatch) {
+    axios.put(`${ROOT_URL}/profile/${userId}`).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: UPDATE_SUBSCRIPTION,
+        payload: response.data,
+      });
+    });
+  }
+}
+
+//AM New
 export function fetchProfileByID(userID) {
 
   return function(dispatch) {
@@ -174,7 +190,7 @@ export function clearProfile() {
 }
 
 //AM New changed name from description to bio
-export function updateProfile({ firstName, lastName, birthday, sex, phone, address, occupation, bio }, historyReplace) {
+export function updateProfile({ firstName, lastName, birthday, sex, phone, address, occupation, description }, historyReplace) {
 
   return function(dispatch) {
     axios.put(`${ROOT_URL}/profile`, {  // req.body (2nd parameter)
@@ -185,7 +201,7 @@ export function updateProfile({ firstName, lastName, birthday, sex, phone, addre
         phone,
         address,
         occupation,
-        bio,
+        description,
       }, {  // header (3rd parameter)
         headers: {authorization: localStorage.getItem('token')},  // require auth
       }

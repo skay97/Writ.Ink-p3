@@ -7,6 +7,7 @@ export const CLEAR_PROFILE = 'clear_profile';
 export const UPDATE_PROFILE = 'update_profile';
 export const PROFILE_ERROR = 'profile_error'; // AM New
 export const ACCOUNT_DELETED = 'account_deleted'; // AM New
+export const UPDATE_SUBSCRIPTION = 'update_subscription'; // AM New
 
 export const FETCH_POSTS = 'fetch_posts';
 export const CREATE_POST = 'create_post';
