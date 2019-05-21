@@ -120,7 +120,52 @@ export function fetchProfile() {
         type: FETCH_PROFILE,
         payload: response.data.user,
       });
-    });
+    }).catch((err) => {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }); //AM New
+  }
+}
+
+//AM New
+export function fetchProfiles() {
+
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/profile/all`, {
+      headers: { authorization: localStorage.getItem('token') }
+    }).then(response => {
+      dispatch({
+        type: FETCH_PROFILES,
+        payload: response.data.user,
+      });
+    }).catch((err) => {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }); //AM New
+  }
+}
+
+//AM New
+export function fetchProfileByID(userID) {
+
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/profile/${userID}`, {
+      headers: { authorization: localStorage.getItem('token') }
+    }).then(response => {
+      dispatch({
+        type: FETCH_PROFILE,
+        payload: response.data.user,
+      });
+    }).catch((err) => {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }); //AM New
   }
 }
 
@@ -128,7 +173,8 @@ export function clearProfile() {
   return { type: CLEAR_PROFILE };
 }
 
-export function updateProfile({ firstName, lastName, birthday, sex, phone, address, occupation, description }, historyReplace) {
+//AM New changed name from description to bio
+export function updateProfile({ firstName, lastName, birthday, sex, phone, address, occupation, bio }, historyReplace) {
 
   return function(dispatch) {
     axios.put(`${ROOT_URL}/profile`, {  // req.body (2nd parameter)
@@ -139,7 +185,7 @@ export function updateProfile({ firstName, lastName, birthday, sex, phone, addre
         phone,
         address,
         occupation,
-        description,
+        bio,
       }, {  // header (3rd parameter)
         headers: {authorization: localStorage.getItem('token')},  // require auth
       }
@@ -254,6 +300,36 @@ export function fetchPost(id) {
   }
 }
 
+//AM New
+
+export function addLike(id) {
+
+  return function(dispatch) {
+    axios.put(`${ROOT_URL}/posts/like/${id}`).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: UPDATE_LIKES,
+        payload: response.data,
+      });
+    });
+  }
+}
+
+//AM New
+
+export function removeLike(id) {
+
+  return function(dispatch) {
+    axios.put(`${ROOT_URL}/posts/unlike/${id}`).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: UPDATE_LIKES,
+        payload: response.data,
+      });
+    });
+  }
+}
+
 export function updatePost({ _id, title, categories, content }, onEditSuccess, historyReplace) {
 
   return function(dispatch) {
@@ -281,6 +357,8 @@ export function updatePost({ _id, title, categories, content }, onEditSuccess, h
       });
   }
 }
+
+
 
 export function deletePost(id, historyPush) {
 
@@ -359,6 +437,23 @@ export function fetchComments(postId) {
         payload: response.data,
       });
     });
+  }
+}
+
+//AM New
+
+export function deleteComment(postId, commentId) {
+
+  return function(dispatch) {
+    axios.delete(`${ROOT_URL}/comments/${postId}/${commentId}`, {
+      headers: {authorization: localStorage.getItem('token')},  // require auth
+    }).then((response) => {
+      dispatch({
+        type: REMOVE_COMMENT,
+        payload: commentId,
+      });
+      historyPush('/comments');
+    })
   }
 }
 
