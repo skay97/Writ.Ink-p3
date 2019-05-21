@@ -1,26 +1,50 @@
-// // Main starting point of the application
-// const express = require('express');
-// const http = require('http');
-// const bodyParser = require('body-parser');
-// const morgan = require('morgan');
-// const app = express();
-// const router = require('./server/router');
-// const mongoose = require('mongoose');
-// // const cors = require('cors');  // we don't need it anymore, because we use proxy server instead
+// Main starting point of the application
+const express = require('express');
+require('dotenv').config()
+const path = require('path');
+//const http = require('http');
+//const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const router = require('./routes/router');
+const mongoose = require('mongoose');
+// const cors = require('cors');  // we don't need it anymore, because we use proxy server instead
 
-// // DB Setup (connect mongoose and instance of mongodb)
-// mongoose.connect('mongodb://localhost:writ-ink/writ-ink');
+const app = express();
 
-// // App Setup (morgan and body-parser are middleware in Express)
-// app.use(morgan('combined'));  // middleware for logging
-// app.use(bodyParser.json({ type: '*/*' }));  // middleware for helping parse incoming HTTP requests
-// // app.use(cors());  // middleware for circumventing (规避) cors error
+const uristring = process.env.MONGODB_URI ||'mongodb://localhost/writ-ink';
 
-// // Router Setup
-// router(app);
+mongoose.connect(uristring, {useNewUrlParser: true, useCreateIndex: true}, function (err, res) {
+    if (err) {
+    console.log (`ERROR connecting to: ${uristring} - ${err}`);
+    } else {
+    console.log (`Succeeded connected to: ${uristring}`);
+    }
+});
 
-// // Server Setup
-// const port = process.env.PORT || 3090;
-// const server = http.createServer(app);
+// DB Setup (connect mongoose and instance of mongodb)
+//mongoose.connect('mongodb://localhost:writ-ink/writ-ink');
+
+// App Setup (morgan and body-parser are middleware in Express)
+app.use(express.json({ extended: false }));
+app.use(morgan('combined'));  // middleware for logging
+//app.use(bodyParser.json({ type: '*/*' }));  // middleware for helping parse incoming HTTP requests
+// app.use(cors());  // middleware for circumventing (规避) cors error
+
+// Router Setup
+router(app);
+
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+  }
+
+// Server Setup
+const PORT = process.env.PORT || 3090;
+//const server = http.createServer(app);
 // server.listen(port);
 // console.log('Server listening on: ', port);
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

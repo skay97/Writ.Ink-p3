@@ -1,4 +1,4 @@
 // Hold application secret and config
 module.exports = {
-  secret: 'DAnAkNmnk2jHONa4wVK0'
+  secret: process.env.APP_SECRET
 };

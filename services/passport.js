@@ -7,13 +7,13 @@
 // - Verify user with JWT (what we use here);
 // - Verify user with username and password;
 // - ... (check http://passportjs.org/)
-
 const passport = require('passport');
 const User = require('../models/user');
-const config = require('../config');
+const config = require('../config/config');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
+console.log(config.secret)
 
 // Setup options for JWT strategy
 const jwtOptions = {

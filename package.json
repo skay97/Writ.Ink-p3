@@ -1,28 +1,44 @@
 {
-  "name": "writ.ink",
+  "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "10.15.1"
+  },
+  "description": "Writ.Ink: Content without the noise",
   "main": "server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node ./server/index.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm start",
-    "seed": "node scripts/seedDB.js",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "writ.ink",
-  "license": "ISC",
+  "authors": "Theo Basallaje, Daniel Marshall, Salman Karim, Adrian Morales",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "config": "^3.1.0",
+    "cors": "^2.8.3",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "gravatar": "^1.8.0",
+    "http-proxy-middleware": "^0.19.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^5.5.1",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0"
+  },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7",
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "mongoose": "^4.11.0",
-    "morgan": "^1.8.2"
-  },
-  "dependencies": {
-    "if-env": "^1.0.4"
+    "nodemon": "^1.18.11"
   }
 }
