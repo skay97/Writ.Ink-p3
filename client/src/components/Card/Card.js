@@ -7,12 +7,17 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import Chip from '@material-ui/core/Chip';
+
 
 const styles = {
   card: {
     minWidth: 275,
     textAlign: "left",
     marginTop: 20,
+    backgroundColor: "#A9A9A9",
+    color: "white"
+
   },
   bullet: {
     display: 'inline-block',
@@ -21,7 +26,9 @@ const styles = {
     color: "blue"
   },
   title: {
-    fontSize: 14,
+    fontSize: "6vh",
+    color: "#ffff",
+    margin: 0
   },
   button: {
     display: "flex",
@@ -30,6 +37,12 @@ const styles = {
   },
   pos: {
     marginBottom: 12,
+    color: "white"
+
+  },
+  desc: {
+    fontSize: "1.05rem",
+    color: "#fff"
   },
   bigAvatar: {
     margin: 10,
@@ -38,32 +51,46 @@ const styles = {
   },
 };
 
+const featuredPosts = [
+  {
+    title: 'Three Little Pigs',
+    author: 'Writ.ink Team',
+    cat: 'article',
+    date: 'Nov 11',
+    words: 500,
+    views: 500,
+    likes: 100,
+    time: 52,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+  }
+];
+
 
 function SimpleCard(props) {
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+  // const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
       <CardContent>
-          <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.bigAvatar} />
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
+        <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.bigAvatar} />
+        <Typography style={{  }} className={classes.title} color="textSecondary" gutterBottom>
+          Featured Article - {featuredPosts[0].author}
         </Typography>
-        <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
+
+        <Chip style = {{height: 40, width:100, fontSize: 18, backgroundColor: "#3d566e"}}
+          label={featuredPosts[0].cat}
+          clickable
+          className={classes.chip}
+          color="primary"
+        />
+        {/* <Typography className={classes.pos} color="textSecondary">
           adjective
-        </Typography>
-        <Typography component="p">
-          well meaning and kindly.
+        </Typography> */}
+        <Typography className={classes.desc} component="p">
           <br />
-          {'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}
+          {'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
         </Typography>
       </CardContent>
       <CardActions className={classes.button} >
