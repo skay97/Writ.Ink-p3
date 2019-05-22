@@ -5,6 +5,7 @@ import {
   FETCH_POST,
   UPDATE_POST,
   DELETE_POST,
+  UPDATE_LIKES,
 } from '../actions/types';
 
 export default function(state = {}, action) {
@@ -19,6 +20,8 @@ export default function(state = {}, action) {
       return { ...state, [action.payload._id]: action.payload };
     case UPDATE_POST:
       return { ...state, [action.payload._id]: action.payload };
+    case UPDATE_LIKES:
+      return { ...state, [action.payload._id]: action.payload }; // AM New
     case DELETE_POST:
       return _.omit(state, action.payload);
     default:

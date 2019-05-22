@@ -22,7 +22,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 
-
 const styles = theme => ({
   root: {
     width: '100%',

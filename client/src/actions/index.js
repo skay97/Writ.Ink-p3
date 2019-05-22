@@ -7,17 +7,24 @@ import {
   FETCH_PROFILE,
   CLEAR_PROFILE,
   UPDATE_PROFILE,
+  FETCH_PROFILES, //AM New
+  PROFILE_ERROR, //AM New
+  ACCOUNT_DELETED, //AM New
+  UPDATE_SUBSCRIPTION, //AM New
 
   FETCH_POSTS,
   CREATE_POST,
   FETCH_POST,
   UPDATE_POST,
   DELETE_POST,
+  POST_ERROR, //AM New
+  UPDATE_LIKES, //AM New
 
   CHECK_AUTHORITY,
 
   CREATE_COMMENT,
   FETCH_COMMENTS,
+  REMOVE_COMMENT, //AM New
 } from './types';
 
 const ROOT_URL = '/api';
@@ -114,7 +121,67 @@ export function fetchProfile() {
         type: FETCH_PROFILE,
         payload: response.data.user,
       });
+    }).catch((err) => {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }); //AM New
+  }
+}
+
+//AM New
+export function fetchProfiles() {
+
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/profile/all`, {
+      headers: { authorization: localStorage.getItem('token') }
+    }).then(response => {
+      dispatch({
+        type: FETCH_PROFILES,
+        payload: response.data.user,
+      });
+    }).catch((err) => {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }); //AM New
+  }
+}
+
+//AM New
+
+export function updateSubscription(userId) {
+
+  return function(dispatch) {
+    axios.put(`${ROOT_URL}/profile/${userId}`).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: UPDATE_SUBSCRIPTION,
+        payload: response.data,
+      });
     });
+  }
+}
+
+//AM New
+export function fetchProfileByID(userID) {
+
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/profile/${userID}`, {
+      headers: { authorization: localStorage.getItem('token') }
+    }).then(response => {
+      dispatch({
+        type: FETCH_PROFILE,
+        payload: response.data.user,
+      });
+    }).catch((err) => {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }); //AM New
   }
 }
 
@@ -122,6 +189,7 @@ export function clearProfile() {
   return { type: CLEAR_PROFILE };
 }
 
+//AM New changed name from description to bio
 export function updateProfile({ firstName, lastName, birthday, sex, phone, address, occupation, description }, historyReplace) {
 
   return function(dispatch) {
@@ -199,7 +267,7 @@ export function changePassword({ oldPassword, newPassword }, historyReplace) {
 
 export function fetchPosts() {
 
-  return function(dispatch) {
+  return function(dispatch, getState) {
     axios.get(`${ROOT_URL}/posts`).then((response) => {
       dispatch({
         type: FETCH_POSTS,
@@ -248,6 +316,36 @@ export function fetchPost(id) {
   }
 }
 
+//AM New
+
+export function addLike(id) {
+
+  return function(dispatch) {
+    axios.put(`${ROOT_URL}/posts/like/${id}`).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: UPDATE_LIKES,
+        payload: response.data,
+      });
+    });
+  }
+}
+
+//AM New
+
+export function removeLike(id) {
+
+  return function(dispatch) {
+    axios.put(`${ROOT_URL}/posts/unlike/${id}`).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: UPDATE_LIKES,
+        payload: response.data,
+      });
+    });
+  }
+}
+
 export function updatePost({ _id, title, categories, content }, onEditSuccess, historyReplace) {
 
   return function(dispatch) {
@@ -275,6 +373,8 @@ export function updatePost({ _id, title, categories, content }, onEditSuccess, h
       });
   }
 }
+
+
 
 export function deletePost(id, historyPush) {
 
@@ -355,6 +455,23 @@ export function fetchComments(postId) {
     });
   }
 }
+
+//AM New
+
+// export function deleteComment(postId, commentId) {
+
+//   return function(dispatch) {
+//     axios.delete(`${ROOT_URL}/comments/${postId}/${commentId}`, {
+//       headers: {authorization: localStorage.getItem('token')},  // require auth
+//     }).then((response) => {
+//       dispatch({
+//         type: REMOVE_COMMENT,
+//         payload: commentId,
+//       });
+//       historyPush('/comments');
+//     })
+//   }
+// }
 
 /**
  * Check authority: Check if the user has the authority to make change to a specific post

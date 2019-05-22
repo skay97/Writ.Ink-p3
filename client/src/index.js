@@ -11,7 +11,7 @@ import NoMatch from './components/nomatch';
 import Welcome from './components/welcome';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
-import UserProfile from './pages/ProfileOther'
+import UserProfile from './pages/ProfileOwn';
 import RequireAuth from './components/auth/require_auth';
 import Profile from './components/userinfo/profile';
 import Settings from './components/userinfo/settings';
@@ -28,8 +28,11 @@ import Footer from "./components/Footer/Footer";
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(reducers, composeWithDevTools(
+  applyMiddleware(reduxThunk),
+));
 
 const token = localStorage.getItem('token');
 // If we have a token, consider the user to be signed in
