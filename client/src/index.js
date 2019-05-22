@@ -11,7 +11,7 @@ import NoMatch from './components/nomatch';
 import Welcome from './components/welcome';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
-import UserProfile from './pages/ProfileOther'
+import UserProfile from './pages/ProfileOwn';
 import RequireAuth from './components/auth/require_auth';
 import Profile from './components/userinfo/profile';
 import Settings from './components/userinfo/settings';
