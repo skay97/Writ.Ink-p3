@@ -17,10 +17,6 @@ const styles = {
     marginTop: 20,
     backgroundColor: "#A9A9A9",
     color: "white"
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/development
   },
   bullet: {
     display: 'inline-block',

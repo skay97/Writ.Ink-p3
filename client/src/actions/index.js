@@ -267,7 +267,7 @@ export function changePassword({ oldPassword, newPassword }, historyReplace) {
 
 export function fetchPosts() {
 
-  return function(dispatch) {
+  return function(dispatch, getState) {
     axios.get(`${ROOT_URL}/posts`).then((response) => {
       dispatch({
         type: FETCH_POSTS,
@@ -458,20 +458,20 @@ export function fetchComments(postId) {
 
 //AM New
 
-export function deleteComment(postId, commentId) {
+// export function deleteComment(postId, commentId) {
 
-  return function(dispatch) {
-    axios.delete(`${ROOT_URL}/comments/${postId}/${commentId}`, {
-      headers: {authorization: localStorage.getItem('token')},  // require auth
-    }).then((response) => {
-      dispatch({
-        type: REMOVE_COMMENT,
-        payload: commentId,
-      });
-      historyPush('/comments');
-    })
-  }
-}
+//   return function(dispatch) {
+//     axios.delete(`${ROOT_URL}/comments/${postId}/${commentId}`, {
+//       headers: {authorization: localStorage.getItem('token')},  // require auth
+//     }).then((response) => {
+//       dispatch({
+//         type: REMOVE_COMMENT,
+//         payload: commentId,
+//       });
+//       historyPush('/comments');
+//     })
+//   }
+// }
 
 /**
  * Check authority: Check if the user has the authority to make change to a specific post

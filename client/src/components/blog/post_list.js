@@ -118,7 +118,7 @@ class PostList extends Component {
     // console.log(this.props.posts);
     return (
       <div style={{textAlign: "center"}}className="post">
-        <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post</Link>
+        <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post {this.props.username}</Link>
         {_.map(this.props.posts, post => {
           return this.renderPostSummary(post);
         })}
@@ -127,8 +127,11 @@ class PostList extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { posts: state.posts };
+function mapStateToProps(state, props) {
+  return { 
+    posts: state.posts,  
+    username: state.auth.username
+  };
 }
 
 // export default connect(mapStateToProps, { fetchPosts })(PostList);
@@ -138,7 +141,8 @@ PostList.propTypes = {
 };
 
 // export default connect(mapStateToProps, { fetchPosts })(PostList)(withStyles(styles)(PostList));
+const mapDispatchToProps = { fetchPosts };
 export default compose(
   withStyles(styles, { name: 'Postlist' }),
-  connect(mapStateToProps, { fetchPosts })
+  connect(mapStateToProps, mapDispatchToProps)
 )(PostList);

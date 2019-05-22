@@ -28,8 +28,11 @@ import Footer from "./components/Footer/Footer";
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(reducers, composeWithDevTools(
+  applyMiddleware(reduxThunk),
+));
 
 const token = localStorage.getItem('token');
 // If we have a token, consider the user to be signed in
