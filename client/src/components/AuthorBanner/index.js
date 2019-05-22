@@ -9,15 +9,18 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 5,
-    paddingBottom: theme.spacing.unit * 5,
+    paddingTop: theme.spacing.unit * 7,
+    paddingBottom: theme.spacing.unit * 7,
     backgroundColor: "black",
     marginTop: "1rem",
-    marginBottom: "1rem",
+    marginBottom: "0.5rem",
   },
   extendedIcon: {
     marginBottom: theme.spacing.unit,
   },
+  label: {
+    paddingTop: '0',
+  }
 });
 
 function PaperSheet(props) {
@@ -25,10 +28,24 @@ function PaperSheet(props) {
 
   return (
       <Paper className={classes.root} elevation={1}>
-        <Grid container direction="row" justify="center" alignItems="flex-end">
-        <Grid item xs={5}>
-        <Typography component="p" style={{color: "white"}}>
-          <strong>About Me:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies id massa vitae volutpat. Praesent tempus lorem purus, at iaculis nunc sollicitudin ac. Donec finibus sed urna a malesuada.
+        <Grid
+          classes = {{label: classes.label}} 
+          container direction="row" 
+          justify="center" 
+          alignItems="flex-end"
+        >
+        <Grid>
+        <Typography variant="h6" style={{color: "white"}}>
+          <strong>About Me: </strong>         
+          Hakuna Matata!
+          What a wonderful phrase
+          Hakuna Matata!
+          Ain't no passing craze
+          It means no worries
+          For the rest of your days
+          Yeah, sing it, kid!
+          It's our problem-free philosophy
+          Hakuna Matata!  
         </Typography>
         </Grid>
         </Grid>

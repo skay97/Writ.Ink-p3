@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBook, faStickyNote, faScroll, faBookmark } from '@fortawesome/free-solid-svg-icons';
-//import AuthorBanner from '../components/AuthorBanner';
+import AuthorBanner from '../components/AuthorBanner';
 import ProfileCard from '../components/ProfileCard';
 //import CategoryTags from '../components/CategoryTags'
 import Grid from '@material-ui/core/Grid';
@@ -42,10 +42,17 @@ function UserProfile(props) {
           alignItems="flex-start"
           spacing={40}
         >
+      <Grid item xs={12}>
+          <AuthorBanner/>
+      </Grid>
           <Grid item xs={12} sm={3}>
             <ProfileCard/> 
           </Grid>
           <Grid item xs={12} sm={9}>
+            <Card2 />
+            <br/>
+            <Card2 />
+            <br/>
             <Card2 />
           </Grid>
         </Grid>

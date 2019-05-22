@@ -18,6 +18,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-scripts": "1.0.13",
+    "react-sticky-footer": "0.1.0-rc3",
     "redux": "^3.7.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-form": "^7.0.4",
@@ -29,5 +30,17 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3090"
+  "proxy": "http://localhost:3090",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

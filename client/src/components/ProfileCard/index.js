@@ -29,7 +29,7 @@ function MediaCard(props) { //change to class component
   const { classes } = props;
   return (
     <div className={classes.root}>
-    <Card className={classes.card}>
+    <Card className={classes.card} style={{maxHeight: "500px"}}>
         <CardMedia
           className={classes.media}
           image="http://lorempixel.com/output/people-q-c-250-100-1.jpg"
