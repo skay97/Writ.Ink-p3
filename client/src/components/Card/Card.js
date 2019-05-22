@@ -78,7 +78,7 @@ function SimpleCard(props) {
           Featured Article - {featuredPosts[0].author}
         </Typography>
 
-        <Chip style = {{height: 25, fontSize: 18, backgroundColor: "#3d566e"}}
+        <Chip style = {{height: 25, fontSize: "1.5vh", backgroundColor: "#3d566e"}}
           label={featuredPosts[0].cat}
           clickable
           className={classes.chip}

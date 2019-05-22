@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { verifyJwt, signoutUser } from '../actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPenNib } from '@fortawesome/free-solid-svg-icons';
+
 
 class Header extends Component {
 

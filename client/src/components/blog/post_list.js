@@ -91,7 +91,7 @@ class PostList extends Component {
         alignItems="center"
         >
         <Grid item xs={12} sm={12}>
-        <Card style={{ height: 250}} className={classes.card}>
+        <Card style={{ }} className={classes.card}>
           <CardContent>
             <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.Avatar} />
             <Typography style={{color:"white"}} className={classes.title} color="textSecondary" gutterBottom>
