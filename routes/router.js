@@ -3,6 +3,7 @@ const Profile = require('../controllers/userinfo');
 const Blog = require('../controllers/blog');
 
 // service
+const gravatar = require("gravatar");
 const passport = require('passport');
 const passportService = require('../services/passport');
 
@@ -55,6 +56,8 @@ module.exports = function(app) {
 
   app.get('/api/my_posts', requireAuth, Blog.fetchPostsByAuthorId);
 
+
+
   /**
    * Blog Comment APIs
    */
@@ -62,6 +65,11 @@ module.exports = function(app) {
   app.post('/api/comments/:postId', requireAuth, Blog.createComment);
 
   app.get('/api/comments/:postId', Blog.fetchCommentsByPostId);
+
+  // subscriptions
+  app.post('/api/subscriptions/:authorId/:userId', requireAuth, Sub.createSubscription);
+
+  // app.get('/api/subscriptions/:userId', Sub.fetchSubscriptons);
 };
 
 

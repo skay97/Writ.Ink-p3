@@ -17,7 +17,6 @@ const styles = {
     marginTop: 20,
     backgroundColor: "#A9A9A9",
     color: "white"
-
   },
   bullet: {
     display: 'inline-block',

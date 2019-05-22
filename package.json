@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "authors": "Theo Basallaje, Daniel Marsha, Salman Karim, Adrian Morales",
+  "authors": "Theo Basallaje, Daniel Marshall, Salman Karim, Adrian Morales",
   "license": "MIT",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
