@@ -25,7 +25,7 @@ const styles = theme => ({
     display: 'block',
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
-    [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
+        [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
       width: 400,
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -123,6 +123,8 @@ class Signin extends Component {
     const { classes } = this.props;
     // when do we need .bind(this)?
     return (
+
+      <CssBaseline>
       <div>
         {this.renderAlert()}
         {/* <form className="form-signin" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
@@ -165,6 +167,7 @@ class Signin extends Component {
           </Paper>
         </main>
       </div>
+      </CssBaseline>
     );
   }
 }

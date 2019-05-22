@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
-
+//import './style.css';
 // import Header from './components/header';
 // import Footer from './components/footer';
 import NoMatch from './components/nomatch';
@@ -41,13 +41,18 @@ if (token) {
   store.dispatch({ type: AUTH_USER });
 }
 
+
+
+
 ReactDOM.render(
+
   <Provider store={store}>
     <Router>
-      <div>
+      <div className="Site">
         {/* <Header /> */}
         {/* <div className="container" id="content"> */}
-        <Header />
+        <Header class="Site-content" />
+        <div>
           <Switch>
             <Route exact path='/' component={Welcome} />
             <Route path='/signin' component={Signin} />
@@ -66,7 +71,8 @@ ReactDOM.render(
             <Route path='/my_posts' component={RequireAuth(PostMine)} />
             <Route component={NoMatch} />
           </Switch>
-          <Footer />
+        </div>
+          <Footer/>
         {/* </div> */}
         {/* <Footer /> */}
       </div>

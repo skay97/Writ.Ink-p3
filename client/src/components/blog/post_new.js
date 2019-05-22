@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { createPost } from '../../actions';
 import QuillEditor from "../Quill";
+import { CssBaseline } from '@material-ui/core';
 
 class PostNew extends Component {
   constructor(props) {
@@ -77,6 +78,8 @@ class PostNew extends Component {
     const { handleSubmit } = this.props;
 
     return (
+    <React.Fragment>
+      <CssBaseline/>
       <div className="post">
         {this.renderAlert()}
         <h2 className="mb-5">New Post</h2>
@@ -87,6 +90,7 @@ class PostNew extends Component {
           <button action="submit" className="btn btn-primary">Publish</button>
         </form>
       </div>
+    </React.Fragment>
     );
   }
 }
