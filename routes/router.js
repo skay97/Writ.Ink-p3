@@ -3,7 +3,9 @@ const Profile = require('../controllers/userinfo');
 const Blog = require('../controllers/blog');
 const Sub = require('../controllers/subscriptions');
 
+
 // service
+const gravatar = require("gravatar");
 const passport = require('passport');
 const passportService = require('../services/passport');
 
@@ -55,6 +57,8 @@ module.exports = function(app) {
   app.delete('/api/posts/:id', requireAuth, Blog.deletePost);
 
   app.get('/api/my_posts', requireAuth, Blog.fetchPostsByAuthorId);
+
+
 
   /**
    * Blog Comment APIs

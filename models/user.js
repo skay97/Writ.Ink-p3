@@ -10,12 +10,14 @@ const userSchema = new Schema({
   lastName: String,
 
   birthday: { type: String, default: '' },
-  sex: { type: String, default: '' },  // secrecy/male/female
+  //sex: { type: String, default: '' },  // currently not needed
   phone: { type: String, default: '' },
   address: { type: String, default: '' },
   occupation: { type: String, default: '' },
   description: { type: String, default: '' },
-  photo: { data: Buffer, contentType: String},
+  photo: {
+    type: String
+  },
   about: { type: String, trim: true},
  following: [{type: mongoose.Schema.ObjectId, ref: 'User'}],
  followers: [{type: mongoose.Schema.ObjectId, ref: 'User'}],

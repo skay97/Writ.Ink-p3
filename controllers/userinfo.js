@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const Post = require('../models/post');
 const Comment = require('../models/comment');
-
+//import profileImage from './../../client/assets/images/profile-pic.png'
 /**
  * Fetch profile information
  *
@@ -19,11 +19,13 @@ exports.fetchProfile = function(req, res, next) {
     firstName: req.user.firstName,
     lastName: req.user.lastName,
     birthday: req.user.birthday,
-    sex: req.user.sex,
+    //sex: req.user.sex,
     phone: req.user.phone,
     address: req.user.address,
     occupation: req.user.occupation,
     description: req.user.description,
+    photo: req.user.photo,
+    about: req.user.about
   });
   res.send({
     user: user
@@ -45,7 +47,7 @@ exports.updateProfile = function(req, res, next) {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const birthday = req.body.birthday;
-  const sex = req.body.sex;
+  //const sex = req.body.sex;
   const phone = req.body.phone;
   const address = req.body.address;
   const occupation = req.body.occupation;
@@ -67,13 +69,16 @@ exports.updateProfile = function(req, res, next) {
       next(err);
     }
   });
+  //Update User Profile Picture
+
+
 
   // Update user profile
   User.findByIdAndUpdate(user._id, { $set: {
     firstName: firstName,
     lastName: lastName,
     birthday: birthday,
-    sex: sex,
+    //sex: sex,
     phone: phone,
     address: address,
     occupation: occupation,
@@ -115,7 +120,7 @@ exports.resetPassword = function(req, res, next) {
     }
 
     if (!isMatch) {
-      return res.status(422).send({ message: 'You old password is incorrect! Please try again.' })
+      return res.status(422).send({ message: 'Your old password is incorrect! Please try again.' })
     }
 
     if (oldPassword === newPassword) {
