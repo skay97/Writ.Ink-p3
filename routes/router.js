@@ -1,6 +1,7 @@
 const Authentication = require('../controllers/authentication');
 const Profile = require('../controllers/userinfo');
 const Blog = require('../controllers/blog');
+const Sub = require('../controllers/subscriptions');
 
 // service
 const passport = require('passport');
@@ -62,6 +63,11 @@ module.exports = function(app) {
   app.post('/api/comments/:postId', requireAuth, Blog.createComment);
 
   app.get('/api/comments/:postId', Blog.fetchCommentsByPostId);
+
+  // subscriptions
+  app.post('/api/subscriptions/:authorId/:userId', requireAuth, Sub.createSubscription);
+
+  // app.get('/api/subscriptions/:userId', Sub.fetchSubscriptons);
 };
 
 

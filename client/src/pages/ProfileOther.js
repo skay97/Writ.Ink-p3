@@ -13,7 +13,7 @@ library.add([faBook, faScroll, faStickyNote, faEdit]);
 function UserProfile() {
   return (
     <React.Fragment>
-      <Appbar/>
+      {/* <Appbar/> */}
       <Grid container direction="row" justify="flex-end">
         <Grid item xs={12}>
           <AuthorBanner/>
@@ -28,7 +28,7 @@ function UserProfile() {
           <Works/>
         </Grid>
       </Grid>
-      <Footer/>
+      {/* <Footer/> */}
     </React.Fragment>
   );
 }

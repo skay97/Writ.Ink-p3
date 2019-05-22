@@ -49,6 +49,7 @@ function UserProfile(props) {
           <ProfileCard/> 
         </Grid>
         <Grid item xs={12} sm={10}>
+<<<<<<< HEAD
           <Card3 />
         </Grid>
       </Grid>
@@ -61,6 +62,12 @@ function UserProfile(props) {
             <Card2 />
           </Grid>
         </Grid>
+=======
+          <Card3 style={{marginBottom: '1rem'}} />
+          <Card2 />
+        </Grid>
+      </Grid>
+>>>>>>> origin/development
       </div>
       <Footer/>
     </React.Fragment>

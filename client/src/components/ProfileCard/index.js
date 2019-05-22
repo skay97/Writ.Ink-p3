@@ -23,7 +23,9 @@ const styles = theme => ({
     },
   });
 
-function MediaCard(props) {
+//make a onSubscriptions method in redux (action?)
+
+function MediaCard(props) { //change to class component
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -72,5 +74,9 @@ function MediaCard(props) {
 MediaCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+//connect to redux
+//user information - user id
+//author id
 
 export default withStyles(styles)(MediaCard);
