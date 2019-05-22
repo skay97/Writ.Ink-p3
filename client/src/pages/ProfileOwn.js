@@ -9,7 +9,7 @@ import ProfileCard from '../components/ProfileCard';
 import Grid from '@material-ui/core/Grid';
 //import CreateProject from '../components/CreateProject';
 import Card2 from '../components/Card/Card2';
-import Card3 from '../components/Card/Card3';
+//import Card3 from '../components/Card/Card3';
 //import Footer from "../components/Footer/Footer";
 //import Appbar from "../components/AppBar/Appbar";
 
@@ -46,7 +46,6 @@ function UserProfile(props) {
             <ProfileCard/> 
           </Grid>
           <Grid item xs={12} sm={9}>
-            <Card3 style={{marginBottom: '1rem'}} />
             <Card2 />
           </Grid>
         </Grid>
