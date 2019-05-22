@@ -14,12 +14,11 @@ class Header extends Component {
       this.props.verifyJwt();  // fetch username
     }
   }
-  library.add([faPenNib]);
 
   renderLinks() {
     if (this.props.authenticated) {
       // show a dropdown menu for authenticated user
-       (
+      return (
         <div className="navbar-nav nav-item dropdown ml-auto">
           <a className="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.props.username}</a>
           <div className="dropdown-menu" aria-labelledby="dropdown02">
@@ -31,7 +30,7 @@ class Header extends Component {
           </div>
         </div>
       );
-    } else 
+    } else {
       // show a link to sign in or sign up
       return (
         <ul className="navbar-nav">
