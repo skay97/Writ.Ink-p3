@@ -1,14 +1,16 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBook, faStickyNote, faScroll, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faStickyNote, faScroll, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import AuthorBanner from '../components/AuthorBanner';
 import ProfileCard from '../components/ProfileCard';
 import CategoryTags from '../components/CategoryTags'
 import Grid from '@material-ui/core/Grid';
-import Works from '../components/WorksOther';
+import CreateProject from '../components/CreateProject'
+import Works from '../components/WorksOwn';
 import Footer from "../components/Footer/Footer"
 import Appbar from "../components/AppBar/Appbar"
-library.add([faBook, faScroll, faStickyNote, faEdit]);
+
+library.add([faBook, faScroll, faStickyNote, faBookmark]);
 
 function UserProfile() {
   return (
@@ -24,6 +26,7 @@ function UserProfile() {
           <ProfileCard/>    
         </Grid>
         <Grid item xs={9}>
+          <CreateProject/>
           <CategoryTags/>
           <Works/>
         </Grid>

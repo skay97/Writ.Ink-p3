@@ -2,7 +2,6 @@ const jwt = require('jwt-simple');
 const passport = require('passport');
 const User = require('../models/user');
 const config = require('../config/config');
-const gravatar = require("gravatar");
 
 // utility function: User ID + Timestamp + Secret String = JSON Web Token (JWT)
 function tokenForUser(user) {

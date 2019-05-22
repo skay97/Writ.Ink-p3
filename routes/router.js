@@ -1,8 +1,6 @@
 const Authentication = require('../controllers/authentication');
 const Profile = require('../controllers/userinfo');
 const Blog = require('../controllers/blog');
-const Sub = require('../controllers/subscriptions');
-
 
 // service
 const gravatar = require("gravatar");

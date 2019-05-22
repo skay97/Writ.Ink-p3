@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
     root: {
       minWidth: '150px',
+      marginRight: '5rem',
+      marginTop: '2rem',
     },
     media: {
         height: 200,
