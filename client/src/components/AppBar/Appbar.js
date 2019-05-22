@@ -201,7 +201,7 @@ class Header extends React.Component {
                   Discover
             </Typography>
               </Button>
-              <Button color="inherit" href="/subscriptions">
+              <Button color="inherit" href="/subcriptions">
                 <Typography className={classes.title} variant="h6" noWrap>
                   Subscriptions
             </Typography>

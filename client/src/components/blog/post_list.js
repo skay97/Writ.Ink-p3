@@ -93,10 +93,12 @@ class PostList extends Component {
         <Grid item xs={12} sm={12}>
         <Card style={{ height: 250}} className={classes.card}>
           <CardContent>
-            <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.smallAvatar} />
+            <Avatar alt="Remy Sharp" src="http://www.iconninja.com/files/627/232/1000/male-person-geek-man-avatar-user-icon.svg" className={classes.Avatar} />
             <Typography style={{color:"white"}} className={classes.title} color="textSecondary" gutterBottom>
-              <Link style={{color:"white"}} className="link-without-underline" to={`/posts/${post._id}`}>{post.title}</Link>
-              by <Link to={`/author/${post.authorId}`}>{post.authorName}</Link>
+              {/* className="link-without-underline" -- for no underline */}
+              <Link style={{color:"white"}} to={`/posts/${post._id}`}>{post.title}</Link>
+              <br/>
+              <span style={{fontSize: 25}}>by</span> <Link style={{color:"white", fontSize: 25}} to={`/author/${post.authorId}`}>{post.authorName}</Link>
             </Typography>
             {this.renderTags(post.categories)}
             <Typography className={classes.desc} component="p">

@@ -12,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="Container" style={{ backgroundColor: "#DCDCDC" }}>
+      <div className="Container" style={{ backgroundColor: "#DCDCDC", paddingBottom: 50}}>
 
         {/* <PrimarySearchAppBar /> */}
 

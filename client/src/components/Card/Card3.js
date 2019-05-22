@@ -57,7 +57,7 @@ function SimpleCard3(props) {
         <Typography variant="h5" component="h2">
           {featuredPosts[0].title} - {featuredPosts[0].author}
         </Typography>
-        <Chip style = {{height: 30, width:75, fontSize: 15, borderRadius: 10, backgroundColor: "#3d566e"}}
+        <Chip style = {{height: 25, fontSize: 18, backgroundColor: "#3d566e"}}
           label={featuredPosts[0].cat}
           clickable
           className={classes.chip}
