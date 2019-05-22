@@ -162,14 +162,14 @@ class Header extends React.Component {
           open={isMobileMenuOpen}
           onClose={this.handleMenuClose}
         >
-          <MenuItem onClick={this.handleMobileMenuClose}>
+          {/* <MenuItem onClick={this.handleMobileMenuClose}>
             <IconButton color="inherit">
               <Badge badgeContent={11} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
             Notifications
-        </MenuItem>
+        </MenuItem> */}
           <MenuItem onClick={this.handleProfileMenuOpen}>
             <Typography variant="h6" noWrap>{this.props.id}</Typography>
             <IconButton
@@ -196,9 +196,14 @@ class Header extends React.Component {
                   Writ<span style={{ color: 'red' }}>•</span>ink
             </Typography>
               </Button>
-              <Button color="inherit" href="/subcriptions">
+              <Button color="inherit" href="/posts">
                 <Typography className={classes.title} variant="h6" noWrap>
                   Discover
+            </Typography>
+              </Button>
+              <Button color="inherit" href="/subscriptions">
+                <Typography className={classes.title} variant="h6" noWrap>
+                  Subscriptions
             </Typography>
               </Button>
               {/* <Button color="inherit" href="/posts">
@@ -220,11 +225,11 @@ class Header extends React.Component {
               </div> */}
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
-                <IconButton color="inherit">
+                {/* <IconButton color="inherit">
                   <Badge badgeContent={12} color="secondary">
                     <NotificationsIcon />
                   </Badge>
-                </IconButton>
+                </IconButton> */}
                 <IconButton
                   aria-owns={isMenuOpen ? 'material-appbar' : undefined}
                   aria-haspopup="true"
@@ -272,7 +277,12 @@ class Header extends React.Component {
                   Writ<span style={{ color: 'red' }}>•</span>ink
             </Typography>
               </Button>
-              <div className={classes.search}>
+              <Button color="inherit" href="/posts">
+                <Typography className={classes.title} variant="h6" noWrap>
+                  Discover
+            </Typography>
+              </Button>
+              {/* <div className={classes.search}>
                 <div className={classes.searchIcon}>
                   <SearchIcon />
                 </div>
@@ -283,7 +293,7 @@ class Header extends React.Component {
                     input: classes.inputInput,
                   }}
                 />
-              </div>
+              </div> */}
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <Button color="inherit" href="/signup" className={classes.buttonClass}>Register</Button>

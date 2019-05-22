@@ -67,7 +67,7 @@ module.exports = function(app) {
   // subscriptions
   app.post('/api/subscriptions/:authorId/:userId', requireAuth, Sub.createSubscription);
 
-  app.get('/api/subscriptions/:userId', Sub.fetchSubscriptons);
+  // app.get('/api/subscriptions/:userId', Sub.fetchSubscriptons);
 };
 
 

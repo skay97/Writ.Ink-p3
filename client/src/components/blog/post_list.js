@@ -70,7 +70,7 @@ class PostList extends Component {
     const { classes } = this.props;
     return tags.map(tag => {
       // return <span className="badge badge-info span-with-margin" key={tag}>{tag}</span>;
-      return <Chip style={{ height: 25, width: 100, fontSize: 18, backgroundColor: "#3d566e" }}
+      return <Chip style={{ height: 25, fontSize: 18, backgroundColor: "#3d566e" }}
         label={tag}
         clickable
         className={classes.chip}

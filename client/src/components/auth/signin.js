@@ -136,7 +136,7 @@ class Signin extends Component {
           <CssBaseline />
           <Paper className={classes.paper}>
             <Typography component="h2" variant="h4">
-              Writ.Ink
+            Writ<span style={{ color: 'red' }}>•</span>ink
         </Typography>
             <Avatar className={classes.avatar}>
               <FontAwesomeIcon icon="pen-nib" />
