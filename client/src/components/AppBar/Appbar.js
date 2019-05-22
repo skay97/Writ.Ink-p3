@@ -148,7 +148,7 @@ class Header extends React.Component {
           open={isMenuOpen}
           onClose={this.handleMenuClose}
         >
-          <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
+          <MenuItem onClick={this.handleMenuClose}><a href="/profile" style={{ color: "rgba(0, 0, 0, 0.87)", textDecoration: "none" }}>User Profile</a></MenuItem>
           <MenuItem onClick={this.handleMenuClose}><a href="/settings" style={{ color: "rgba(0, 0, 0, 0.87)", textDecoration: "none" }}>My Account</a></MenuItem>
           <MenuItem onClick={this.handleMenuClose}><a href="/" onClick={this.props.signoutUser} style={{ color: "rgba(0, 0, 0, 0.87)", textDecoration: "none" }}>Sign Out</a></MenuItem>
         </Menu>
@@ -180,7 +180,7 @@ class Header extends React.Component {
             >
               <AccountCircle />
             </IconButton>
-            Profile
+            Hello
         </MenuItem>
           <MenuItem onClick={this.handleMenuClose}><a href="/settings" style={{ color: "rgba(0, 0, 0, 0.87)", textDecoration: "none" }}>My Account</a></MenuItem>
           <MenuItem onClick={this.handleMenuClose}><a href="/" onClick={this.props.signoutUser} style={{ color: "rgba(0, 0, 0, 0.87)", textDecoration: "none" }}>Sign Out</a></MenuItem>
