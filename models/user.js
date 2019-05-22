@@ -15,6 +15,10 @@ const userSchema = new Schema({
   address: { type: String, default: '' },
   occupation: { type: String, default: '' },
   description: { type: String, default: '' },
+  photo: { data: Buffer, contentType: String},
+  about: { type: String, trim: true},
+ following: [{type: mongoose.Schema.ObjectId, ref: 'User'}],
+ followers: [{type: mongoose.Schema.ObjectId, ref: 'User'}],
   subscriptions: [ String ] //array for subbed authors
 });
 
