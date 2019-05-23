@@ -69,7 +69,7 @@ function SimpleCard3(props) {
         <Typography component="p">
           {/* A popular sallutation.
           <br /> */}
-          {"Lorem ipsum dolor amet vHS woke activated charcoal air plant. Polaroid excepteur tacos laborum, nulla leggings ut vape iceland. Actually reprehenderit sed williamsburg sustainable distillery humblebrag pabst iceland. Af la croix ramps before they sold out listicle celiac hashtag adipisicing next level tattooed photo booth jianbing. Mumblecore sed 90's, sriracha hoodie bicycle rights raw denim sartorial prism hammock. Hell of eiusmod aesthetic, est you probably haven't heard of them veniam intelligentsia. Seitan craft beer cronut esse taiyaki labore tumeric ea try-hard gentrify non dreamcatcher."}
+          {"Once upon a time there were three little pigs and the time came for them to leave home and seek their fortunes. Before they left, their mother told them Whatever you do , do it the best that you can because that’s the way to get along in the world.The first little pig built his house out of straw because it was the easiest thing to do. The second little pig built his house out of sticks. This was a little bit stronger than a straw house. The third little pig built his house out of bricks.One night the big bad wolf, who dearly loved to eat fat little piggies, came along and saw the first little pig in his house of straw."}
         </Typography>
       </CardContent>
       <CardActions>

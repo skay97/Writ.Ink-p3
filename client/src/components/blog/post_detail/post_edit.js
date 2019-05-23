@@ -7,8 +7,8 @@ class PostEdit extends Component {
 
   componentDidMount() {
     const { content } = this.props.post;
-    // document.querySelector("trix-editor").value = content;
-    document.querySelector("textarea").value = content;
+    document.querySelector("trix-editor").value = content;
+    // document.querySelector("textarea").value = content;
   }
 
   handleFormSubmit({ title, categories, content }) {
@@ -39,8 +39,8 @@ class PostEdit extends Component {
     <fieldset className="form-group">
       <label>{field.label}</label>
       <input className="form-control" id="x" type="hidden" name="content" />
-      {/* <trix-editor input="x" {...field.input} /> */}
-      <textarea input="x" {...field.input} />
+      <trix-editor input="x" {...field.input} />
+      {/* <textarea input="x" {...field.input} /> */}
     </fieldset>
   );
 

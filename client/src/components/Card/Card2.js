@@ -81,7 +81,7 @@ function SimpleCard2(props) {
         <Typography component="p">
           {/* A popular sallutation.
           <br /> */}
-          {"Lorem ipsum dolor amet vHS woke activated charcoal air plant. Polaroid excepteur tacos laborum, nulla leggings ut vape iceland. Actually reprehenderit sed williamsburg sustainable distillery humblebrag pabst iceland. Af la croix ramps before they sold out listicle celiac hashtag adipisicing next level tattooed photo booth jianbing. Mumblecore sed 90's, sriracha hoodie bicycle rights raw denim sartorial prism hammock. Hell of eiusmod aesthetic, est you probably haven't heard of them veniam intelligentsia. Seitan craft beer cronut esse taiyaki labore tumeric ea try-hard gentrify non dreamcatcher."}
+          {"This is how I career changed to front-end development at 40, starting with no relevant background experience or degree. I used only self-directed study while working full-time and spending next to nothing. I wrote those excited words a few months ago as I was getting ready to start my first day at my new job. Come along with me as I share with you my journey of how I got here. When I first started thinking about becoming a developer, I would read articles like this one with a bit of skepticism. I kept on looking for something in the writer’s background that made them “special"}
         </Typography>
       </CardContent>
       <CardActions>

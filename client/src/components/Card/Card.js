@@ -89,7 +89,7 @@ function SimpleCard(props) {
         </Typography> */}
         <Typography className={classes.desc} component="p">
           <br />
-          {'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+          {'Writ.Ink is a new place on the Internet where people share ideas and stories that are longer than 140 characters and not just for friends. It’s designed for little stories that make your day better and manifestos that change the world. It’s used by everyone from professional journalists to amateur cooks. It’s simple, beautiful, collaborative, and it helps you find the right audience for whatever you have to say.'}
         </Typography>
       </CardContent>
       <CardActions className={classes.button} >

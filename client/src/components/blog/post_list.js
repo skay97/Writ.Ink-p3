@@ -120,7 +120,6 @@ class PostList extends Component {
     // console.log(this.props.posts);
     return (
       <div style={{textAlign: "center"}}className="post">
-        <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post {this.props.username}</Link>
         {_.map(this.props.posts, post => {
           return this.renderPostSummary(post);
         })}
